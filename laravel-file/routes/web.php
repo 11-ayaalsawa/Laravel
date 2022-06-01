@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandyStore;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,15 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+
+// Route::get('/login', function () {
+//     return view('login');
+// });
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+
+Route::get('login/id/{id}/name/{name}', [CandyStore::class, 'index'] )->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
