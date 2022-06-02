@@ -23,9 +23,9 @@ use App\Http\Controllers\CandyStore;
 //     return $marwa;
 // });
 
-Route::get('/candy', function () {
-    return view('candy');
-});
+// Route::get('/candy', function () {
+//     return view('candy');
+// });
 
 
 Route::get('/about', function () {
@@ -38,13 +38,27 @@ Route::get('/contact', function () {
 });
 
 
-// Route::get('/login', function () {
-//     return view('login');
-// });
+Route::get('/login', function () {
+    return view('login');
+});
 
 Route::get('/register', function () {
     return view('register');
 });
 
 
-Route::get('login/id/{id}/name/{name}', [CandyStore::class, 'index'] )->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+Route::get('aya/id/{id}/name/{name}', [CandyStore::class, 'index'] )->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+Route::get('/candy', [CandyStore::class,'candy'] );
+
+
+Route::get('/about', [CandyStore::class,'about'] );
+
+
+Route::get('/contact', [CandyStore::class,'contact'] );
+
+
+Route::get('/login', [CandyStore::class,'login'] );
+
+
+Route::get('/register', [CandyStore::class,'register'] );
