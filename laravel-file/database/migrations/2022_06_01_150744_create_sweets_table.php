@@ -15,9 +15,9 @@ class CreateSweetsTable extends Migration
     {
         Schema::create('sweets', function (Blueprint $table) {
             $table->id();
-            $table->string('candy name');
-            $table->string('candy price');
-            $table->string('candy quantity');
+            $table->string('candy_name');
+            $table->string('candy_price');
+            $table->string('candy_quantity');
             
             $table->timestamps();
         });

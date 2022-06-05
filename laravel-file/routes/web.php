@@ -62,3 +62,12 @@ Route::get('/login', [CandyStore::class,'login'] );
 
 
 Route::get('/register', [CandyStore::class,'register'] );
+
+Route::get('/blog', [CandyStore::class, 'fetch']);
+
+Route::get('delete-data/id/{id}', [CandyStore::class, 'destroy']);
+
+Route::get('edit-data/id/{id}', [CandyStore::class, 'edit']);
+Route::put('update-data/id/{id}', [CandyStore::class, 'update']);
+Route::get('add-data', [CandyStore::class, 'add']);
+Route::post('add-data', [CandyStore::class, 'create']);
